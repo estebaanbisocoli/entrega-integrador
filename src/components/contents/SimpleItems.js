@@ -14,7 +14,7 @@ const mapItems = item => {
 };
 const SimpleItems = ({ items }) => {
   return (
-    <Grid columns={5} doubling={true}>
+    <Grid columns={6} doubling>
       {items.map(mapItems)}
     </Grid>
   );
