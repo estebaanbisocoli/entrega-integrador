@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { DisplayedContent } from '../components/contents';
-import {
-  getPopularMovies,
-  getMoviesGenres,
-  getPopularMoviesByFilter,
-} from '../api/moviedbapi';
-import { formatPromise } from '../controllers';
+import { getMoviesGenres, getPopularMoviesByFilter } from '../api/moviedbapi';
+
 // que se encargue el formato el reducer
 function mapStateToProps({ peliculasPage }) {
   return {
@@ -20,17 +16,6 @@ function mapStateToProps({ peliculasPage }) {
     totalPages: peliculasPage.totalPages,
   };
 }
-const fetchPopularMovies = page => {
-  return async dispatch => {
-    dispatch({ type: 'PELICULAS_PAGE_FETCH' });
-    try {
-      let res = await formatPromise(getPopularMovies());
-      return dispatch({ type: 'PELICULAS_PAGE_SUCCESS', movies: res.data });
-    } catch (error) {
-      return dispatch({ type: 'PELICULAS_PAGE_FAIL', error });
-    }
-  };
-};
 
 const fetchFilterMovies = (page = 1, year, genre) => {
   return async dispatch => {
@@ -53,7 +38,7 @@ const fetchGenres = () => {
   return async dispatch => {
     try {
       let res = await getMoviesGenres();
-      console.log(res);
+
       dispatch({ type: 'FETCH_MOVIES_GENRES', genres: res.data.genres });
     } catch (error) {
       console.log(error);

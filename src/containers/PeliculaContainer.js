@@ -82,15 +82,12 @@ const fetchRecommendations = movieId => {
 };
 class PeliculaContainer extends Component {
   componentDidMount() {
-    console.log(this.props, 'router');
     this.props.dispatch(fetchMovie(this.props.match.params.movieId));
     this.props.dispatch(fetchCrew(this.props.match.params.movieId));
     this.props.dispatch(fetchRecommendations(this.props.match.params.movieId));
   }
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.movieId, nextProps.match.params.movieId);
     if (this.props.match.params.movieId !== nextProps.match.params.movieId) {
-      console.log('refecching');
       this.props.dispatch(fetchMovie(nextProps.match.params.movieId));
       this.props.dispatch(fetchCrew(nextProps.match.params.movieId));
       this.props.dispatch(fetchRecommendations(nextProps.match.params.movieId));

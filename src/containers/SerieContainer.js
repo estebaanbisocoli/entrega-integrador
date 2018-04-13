@@ -27,7 +27,6 @@ const mapApiToReducer = serie => {
 const loadSerie = serieId => {
   return dispatch => {
     return getSerieInfo(serieId).then(res => {
-      console.log(res.data);
       dispatch({ type: 'UPDATE_SERIE', serie: mapApiToReducer(res.data) });
     });
   };
@@ -60,7 +59,6 @@ class SerieContainer extends Component {
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.serieId !== nextProps.match.params.serieId) {
-      console.log('refecching');
       this.props.dispatch(loadSerie(nextProps.match.params.serieId));
 
       this.props.dispatch(
@@ -70,7 +68,6 @@ class SerieContainer extends Component {
   }
 
   render() {
-    console.log(this.props.img);
     return (
       <Serie
         crew={this.props.crew}

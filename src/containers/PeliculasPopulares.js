@@ -33,7 +33,6 @@ const loadMovies = () => {
             redirect: '/movie/' + movie.id,
           };
         });
-        console.log(formatedMovies);
 
         dispatch({ type: 'UPDATE_POPULAR_MOVIES', data: formatedMovies });
       })

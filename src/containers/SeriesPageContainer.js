@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { DisplayedContent } from '../components/contents';
 import { getSeriesGenres, getPopularSeriesByFilter } from '../api/moviedbapi';
-import { formatPromise } from '../controllers';
+
 // que se encargue el formato el reducer
 function mapStateToProps({ seriesPage }) {
   return {
@@ -25,7 +25,7 @@ const fetchFilterSeries = (page = 1, year, genre) => {
         filters: { year, genre },
       });
       let res = await getPopularSeriesByFilter(page, year, genre);
-      console.log('change year');
+
       dispatch({ type: 'SERIES_PAGE_SUCCESS', series: res.data });
     } catch (error) {
       console.log(error);
@@ -38,7 +38,7 @@ const fetchGenres = () => {
   return async dispatch => {
     try {
       let res = await getSeriesGenres();
-      console.log(res);
+
       dispatch({ type: 'FETCH_SERIES_GENRES', genres: res.data.genres });
     } catch (error) {
       console.log(error);

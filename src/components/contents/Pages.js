@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { Pagination, Container } from 'semantic-ui-react';
 
 const Pages = ({ currentPage, onChange, totalPages }) => {
@@ -15,7 +15,5 @@ const Pages = ({ currentPage, onChange, totalPages }) => {
     </Container>
   );
 };
-
-Pages.propTypes = {};
 
 export default Pages;

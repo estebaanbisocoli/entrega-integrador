@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { Container } from 'semantic-ui-react';
 import { Switch, Route } from 'react-router-dom';
 import {
@@ -24,7 +24,5 @@ const Content = props => {
     </MyContainer>
   );
 };
-
-Content.propTypes = {};
 
 export default Content;

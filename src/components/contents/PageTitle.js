@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { Header } from 'semantic-ui-react';
 
 const PageTitle = ({ title }) => {
@@ -9,7 +9,5 @@ const PageTitle = ({ title }) => {
     </Header>
   );
 };
-
-PageTitle.propTypes = {};
 
 export default PageTitle;

@@ -14,6 +14,7 @@ export default (
         loading: false,
         series: action.series,
       };
+    default:
+      return state;
   }
-  return state;
 };

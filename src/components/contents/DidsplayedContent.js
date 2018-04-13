@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Container, Grid } from 'semantic-ui-react';
 import { PageTitle, Filters, ItemList, Pages } from './';
@@ -46,7 +45,5 @@ const DisplayedContent = ({
     </Container>
   );
 };
-
-DisplayedContent.propTypes = {};
 
 export default DisplayedContent;

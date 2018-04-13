@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 import { SectionHeader, SectionItem, SectionLoading } from './';
 import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
-import recomendacion from '../../reducers/recomendacion';
 
 const mapMovies = ({ normalImg, title, movieId, redirect }, index) => {
   if (index < 6) {
     return (
-      <Grid.Column key={movieId}>
+      <Grid.Column key={index}>
         <Link to={redirect}>
           <SectionItem url={normalImg} alt={title} />
         </Link>

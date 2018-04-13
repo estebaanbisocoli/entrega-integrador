@@ -1,7 +1,7 @@
 // Esto deberia estar conectado!!
 import React from 'react';
-import PropTypes from 'prop-types';
-import GridColumn, { Grid, Container } from 'semantic-ui-react';
+
+import { Container } from 'semantic-ui-react';
 import { FilterContent } from './';
 
 const years = () => {
@@ -14,7 +14,6 @@ const years = () => {
 
 const yearList = years();
 const Filters = ({ year, genres, onChangeYear, onChangeGenre }) => {
-  console.log(onChangeYear);
   return (
     <Container>
       <FilterContent
@@ -36,7 +35,5 @@ const Filters = ({ year, genres, onChangeYear, onChangeGenre }) => {
     </Container>
   );
 };
-
-Filters.propTypes = {};
 
 export default Filters;

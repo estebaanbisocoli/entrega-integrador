@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import GridColumn, { Grid } from 'semantic-ui-react';
+
+import { Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { SimpleItem } from './';
 const mapItems = item => {
@@ -19,7 +19,5 @@ const SimpleItems = ({ items }) => {
     </Grid>
   );
 };
-
-SimpleItems.propTypes = {};
 
 export default SimpleItems;
